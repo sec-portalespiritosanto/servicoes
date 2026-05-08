@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>ME Decora Casa | Decoração & Arte para seu Lar</title>
+  <!-- Bootstrap 5 + Icons + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFFCF8;
+      color: #2C2C2C;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, .logo-font, .navbar-brand, .section-title {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Paleta aconchegante e sofisticada */
+    :root {
+      --sage: #9BB0A1;
+      --terracota-light: #D99E7A;
+      --warm-beige: #F5EDE4;
+      --olive: #7D8A6F;
+      --charcoal: #3A3A3A;
+      --dusty-rose: #C88A7A;
+    }
+    .bg-warm {
+      background-color: var(--warm-beige);
+    }
+    .text-sage {
+      color: var(--sage);
+    }
+    .btn-primary-custom {
+      background-color: var(--terracota-light);
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary-custom:hover {
+      background-color: #c27e58;
+      transform: translateY(-2px);
+      color: white;
+    }
+    .btn-outline-custom {
+      border: 1.5px solid var(--terracota-light);
+      color: var(--terracota-light);
+      background: transparent;
+      transition: 0.3s;
+    }
+    .btn-outline-custom:hover {
+      background-color: var(--terracota-light);
+      color: white;
+    }
+    .navbar {
+      background-color: rgba(255, 252, 248, 0.96);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(153, 120, 96, 0.15);
+    }
+    .hero-section {
+      background: linear-gradient(135deg, #F9F2EA 0%, #FFF4EC 100%);
+      border-bottom-left-radius: 3rem;
+      border-bottom-right-radius: 3rem;
+      margin-bottom: 2rem;
+    }
+    .card-deco {
+      border: none;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+    }
+    .card-deco:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+    }
+    .info-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f3e9e2;
+      height: 100%;
+      transition: 0.2s;
+    }
+    .icon-lg {
+      font-size: 2.2rem;
+      color: var(--terracota-light);
+      margin-bottom: 1rem;
+    }
+    .frase-destaque {
+      background: #FEF8F2;
+      border-left: 5px solid var(--terracota-light);
+      padding: 1.2rem 1.5rem;
+      border-radius: 1rem;
+      font-style: italic;
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--terracota-light);
+      border-radius: 4px;
+    }
+    .badge-custom {
+      background-color: #EBE0D6;
+      color: var(--terracota-light);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+    footer {
+      background-color: #2E2A27;
+      color: #E6DED8;
+    }
+    footer a {
+      color: #D9C4B6;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    footer a:hover {
+      color: white;
+    }
+    .social-icons i {
+      font-size: 1.3rem;
+      margin-right: 1rem;
+      transition: 0.2s;
+    }
+    .social-icons i:hover {
+      transform: scale(1.1);
+      color: var(--terracota-light);
+    }
+    @media (max-width: 768px) {
+      .hero-section {
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#">
+        <i class="fas fa-home me-2" style="color: var(--terracota-light);"></i> ME Decora Casa
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link active fw-semibold" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#artigos">Artigos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#decoracoes">Decorações</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section pt-5 pb-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge-custom d-inline-block mb-3"><i class="fas fa-calendar-alt me-1"></i> Desde 2005</span>
+          <h1 class="display-4 fw-bold" style="line-height: 1.2;">Transforme sua casa <br> em um <span style="color: var(--terracota-light);">lar com alma</span></h1>
+          <p class="lead mt-3 text-secondary">ME Decora Casa é especialista em decoração, objetos autorais e artigos que contam histórias. Beleza, aconchego e personalidade em cada detalhe.</p>
+          <div class="mt-4 d-flex gap-3 flex-wrap">
+            <a href="#decoracoes" class="btn btn-primary-custom px-4 py-2 rounded-pill"><i class="fas fa-palette me-2"></i>Ver Decorações</a>
+            <a href="#artigos" class="btn btn-outline-custom rounded-pill px-4 py-2"><i class="fas fa-newspaper me-2"></i>Artigos & Tendências</a>
+          </div>
+          <div class="frase-destaque mt-5">
+            <i class="fas fa-quote-left me-2" style="color: var(--terracota-light);"></i> "Decore como se cada cômodo contasse quem você é — história, afeto e estilo."
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://placehold.co/600x450/F5EDE4/D99E7A?text=ME+Decora+Casa+Inspira%C3%A7%C3%A3o" alt="decoração de interiores" class="img-fluid rounded-4 shadow-lg" style="max-height: 400px; width: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- INFORMAÇÕES DA EMPRESA (cards completos) -->
+    <div class="row g-4 my-5" id="sobre">
+      <div class="col-sm-6 col-lg-3">
+        <div class="info-card text-center">
+          <i class="fas fa-store icon-lg"></i>
+          <h5 class="fw-bold">Razão Social</h5>
+          <p class="mb-0 small">ME Decora Casa Decoracoes LTDA</p>
+          <span class="text-muted small">Nome Fantasia: ME Decora Casa</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="info-card text-center">
+          <i class="fas fa-id-card icon-lg"></i>
+          <h5 class="fw-bold">CNPJ</h5>
+          <p class="mb-0">36.152.422/0001-20</p>
+          <span class="text-muted small">Situação Cadastral: ATIVA</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="info-card text-center">
+          <i class="fas fa-calendar-check icon-lg"></i>
+          <h5 class="fw-bold">Data Abertura</h5>
+          <p class="mb-0">03/11/2005</p>
+          <span class="text-muted small">+18 anos de excelência</span>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="info-card text-center">
+          <i class="fas fa-map-marker-alt icon-lg"></i>
+          <h5 class="fw-bold">Endereço</h5>
+          <p class="mb-0 small">Rua Othao, 405 - Vila Leopoldina</p>
+          <span class="text-muted small">São Paulo - SP, 05313-020</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEÇÃO ARTIGOS (Ideias, dicas, tendências) -->
+    <section id="artigos" class="my-5 pt-4">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <h2 class="section-title"><i class="fas fa-pen-fancy me-2" style="color: var(--terracota-light);"></i>Artigos & Inspiração</h2>
+        <p class="text-muted">Tendências e dicas para transformar ambientes</p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x400/EBE0D6/D99E7A?text=Biophilic+Design" class="card-img-top" alt="design biofílico" style="border-radius: 1.5rem 1.5rem 0 0;">
+            <div class="card-body p-4">
+              <div class="d-flex gap-2 align-items-center mb-2"><i class="fas fa-leaf" style="color: var(--sage);"></i> <span class="text-uppercase small fw-semibold">Bem-estar</span></div>
+              <h5 class="fw-bold">Design Biofílico: a natureza dentro de casa</h5>
+              <p class="card-text">Plantas, luz natural e materiais orgânicos que renovam as energias. Saiba como aplicar essa tendência em qualquer espaço.</p>
+              <a href="#" class="btn btn-sm btn-outline-custom rounded-pill">Ler artigo <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x400/EBE0D6/C88A7A?text=Cores+Terrosas" class="card-img-top" alt="cores terrosas">
+            <div class="card-body p-4">
+              <div class="d-flex gap-2 align-items-center mb-2"><i class="fas fa-palette" style="color: var(--terracota-light);"></i> <span class="text-uppercase small fw-semibold">Paleta</span></div>
+              <h5 class="fw-bold">A força dos tons terrosos na decoração</h5>
+              <p class="card-text">Terracota, ocre e verde musgo criam ambientes acolhedores e cheios de personalidade. Dicas de combinações perfeitas.</p>
+              <a href="#" class="btn btn-sm btn-outline-custom rounded-pill">Explorar <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x400/EBE0D6/9BB0A1?text=Upcycling+Deco" class="card-img-top" alt="upcycling">
+            <div class="card-body p-4">
+              <div class="d-flex gap-2 align-items-center mb-2"><i class="fas fa-recycle" style="color: var(--olive);"></i> <span class="text-uppercase small fw-semibold">Sustentável</span></div>
+              <h5 class="fw-bold">Upcycling criativo: renove móveis com alma</h5>
+              <p class="card-text">Transforme peças antigas em itens únicos. Economia, criatividade e decoração sustentável em alta.</p>
+              <a href="#" class="btn btn-sm btn-outline-custom rounded-pill">Ver projeto <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DECORAÇÕES com vários estilos e dicas -->
+    <section id="decoracoes" class="my-5 pt-4">
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <h2 class="section-title"><i class="fas fa-couch me-2" style="color: var(--terracota-light);"></i>Coleções & Decorações</h2>
+        <p class="text-muted">Estilos exclusivos para cada ambiente</p>
+      </div>
+      <div class="row g-4 mt-2">
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x420/F5EDE4/D99E7A?text=Bohemian+Chic" class="card-img-top" alt="boho chic">
+            <div class="card-body p-4">
+              <i class="fas fa-feather-alt" style="font-size: 1.6rem; color: var(--sage);"></i>
+              <h5 class="fw-bold mt-2">Bohemian Chic</h5>
+              <p>Tapetes, almofadas com franjas, fibras naturais e um toque vintage. Ideal para salas aconchegantes e cheias de personalidade.</p>
+              <div class="mt-2 text-muted small"><i class="fas fa-lightbulb me-1" style="color: var(--terracota-light);"></i> Dica ME: aposte em crochê e cerâmica artesanal.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x420/F5EDE4/C88A7A?text=Moderno+Rústico" class="card-img-top" alt="moderno rústico">
+            <div class="card-body p-4">
+              <i class="fas fa-tree" style="font-size: 1.6rem; color: var(--olive);"></i>
+              <h5 class="fw-bold mt-2">Moderno Rústico</h5>
+              <p>Madeira de demolição, tecidos naturais e iluminação indireta. O equilíbrio entre campo e cidade para quartos e escritórios.</p>
+              <div class="mt-2 text-muted small"><i class="fas fa-seedling me-1" style="color: var(--terracota-light);"></i> Plantas e peças em barro são curingas.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card-deco h-100">
+            <img src="https://placehold.co/600x420/F5EDE4/9BB0A1?text=Escandinavo+Afetivo" class="card-img-top" alt="escandinavo">
+            <div class="card-body p-4">
+              <i class="fas fa-snowflake" style="font-size: 1.6rem; color: var(--sage);"></i>
+              <h5 class="fw-bold mt-2">Hygge & Escandinavo</h5>
+              <p>Funcionalidade com aconchego: mantas, velas, tons claros e detalhes em madeira. Minimalismo mas com alma.</p>
+              <div class="mt-2 text-muted small"><i class="fas fa-mug-hot me-1" style="color: var(--terracota-light);"></i> Invista em luminárias e texturas suaves.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Frases decorativas extras -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="bg-warm rounded-4 p-4 text-center">
+            <i class="fas fa-quote-right fa-2x opacity-50 mb-2" style="color: var(--terracota-light);"></i>
+            <p class="fs-5 fst-italic mb-0">“A ME Decora Casa acredita que cada objeto tem uma história e cada ambiente merece ser vivido com intenção.”</p>
+            <p class="mt-2 small text-muted">— Equipe ME Decora Casa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- diferenciais + ícones e frases -->
+    <div class="row g-4 my-5 py-3 align-items-center">
+      <div class="col-md-6">
+        <div class="info-card p-4 h-100">
+          <h3 class="fw-bold"><i class="fas fa-heart me-2" style="color: var(--terracota-light);"></i>Por que escolher a ME Decora Casa?</h3>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--sage);"></i> Curadoria de peças exclusivas e autorais</li>
+            <li class="mb-2"><i class="fas fa-truck me-2" style="color: var(--sage);"></i> Entregamos em todo Brasil com segurança</li>
+            <li class="mb-2"><i class="fas fa-hand-sparkles me-2" style="color: var(--sage);"></i> Consultoria de decoração personalizada</li>
+            <li class="mb-2"><i class="fas fa-clock me-2" style="color: var(--sage);"></i> Atendimento humano e especializado desde 2005</li>
+          </ul>
+          <div class="mt-3 p-3 bg-warm rounded-3">
+            <i class="fas fa-quote-left me-1" style="color: var(--terracota-light);"></i> "Cada detalhe importa — da almofada ao quadro, criamos lares que abraçam."
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="frase-destaque p-4 bg-white shadow-sm">
+          <i class="fas fa-star fa-2x mb-2" style="color: var(--terracota-light);"></i>
+          <p class="fs-4 fw-medium">“A casa é o espelho da alma. Por isso, decore com o que realmente te move.”</p>
+          <p class="text-end mt-2 text-muted">— Fundadora ME Decora Casa</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTATO E LOCALIZAÇÃO COMPLETA -->
+    <section id="contato" class="my-5 pt-4 pb-4">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <div class="bg-white p-4 rounded-4 shadow-sm">
+            <h3 class="fw-bold mb-3"><i class="fas fa-address-card me-2" style="color: var(--terracota-light);"></i>Fale conosco</h3>
+            <p><i class="fas fa-location-dot me-2" style="color: var(--terracota-light);"></i> <strong>Rua Othao, 405 - Vila Leopoldina</strong><br>São Paulo - SP, CEP 05313-020</p>
+            <p><i class="fas fa-phone-alt me-2" style="color: var(--terracota-light);"></i> (11) 3562-1122 (WhatsApp)</p>
+            <p><i class="fas fa-envelope me-2" style="color: var(--terracota-light);"></i> contato@medecoracasa.com.br</p>
+            <p><i class="fas fa-clock me-2" style="color: var(--terracota-light);"></i> Segunda a Sexta: 9h - 19h | Sábado: 10h - 15h</p>
+            <hr>
+            <div class="social-icons">
+              <a href="#" class="me-3" style="color: var(--terracota-light);"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="#" class="me-3" style="color: var(--terracota-light);"><i class="fab fa-facebook fa-lg"></i></a>
+              <a href="#" class="me-3" style="color: var(--terracota-light);"><i class="fab fa-pinterest fa-lg"></i></a>
+              <a href="#" style="color: var(--terracota-light);"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+            <div class="mt-3 small text-muted">
+              <i class="fas fa-check-circle text-success"></i> Situação cadastral: ATIVA | CNPJ: 36.152.422/0001-20 | Data: 03/11/2005
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="bg-warm p-4 rounded-4 h-100">
+            <h4 class="fw-bold"><i class="fas fa-map-marked-alt me-2" style="color: var(--terracota-light);"></i>Visite nosso showroom</h4>
+            <p>Na charmosa Vila Leopoldina, nosso espaço conceitual reúne as melhores tendências em decoração. Venha sentir as texturas, cores e inspirações pessoalmente.</p>
+            <div class="ratio ratio-16x9 mt-3 rounded-3 overflow-hidden border-0 shadow-sm">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.0237023618947!2d-46.7264165!3d-23.5289568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8c3a8f9c6c1%3A0x5f3c9f5c5f5c5f5c!2sVila%20Leopoldina%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1712345678901!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <p class="mt-3 mb-0"><i class="fas fa-bus me-1" style="color: var(--terracota-light);"></i> Próximo ao terminal Vila Leopoldina e estações de trem futuras. Fácil acesso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold"><i class="fas fa-home me-2"></i> ME Decora Casa</h5>
+          <p class="small">Decoração que transforma espaços em lares acolhedores. Há 18 anos criando ambientes com personalidade.</p>
+          <p class="small mb-0">CNPJ: 36.152.422/0001-20 <br> Situação Cadastral: 03/11/2005 (Ativa)</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">Navegação</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#home" class="text-decoration-none">Início</a></li>
+            <li><a href="#artigos" class="text-decoration-none">Artigos & tendências</a></li>
+            <li><a href="#decoracoes" class="text-decoration-none">Decorações</a></li>
+            <li><a href="#contato" class="text-decoration-none">Contato e localização</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">Newsletter ME</h5>
+          <p class="small">Receba ideias decorativas e novidades exclusivas.</p>
+          <div class="input-group">
+            <input type="email" class="form-control form-control-sm bg-transparent text-white border-white" placeholder="Seu e-mail">
+            <button class="btn btn-outline-light btn-sm">Assinar</button>
+          </div>
+          <div class="mt-3">
+            <i class="fab fa-instagram me-3 fa-lg"></i>
+            <i class="fab fa-facebook me-3 fa-lg"></i>
+            <i class="fab fa-pinterest me-3 fa-lg"></i>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 opacity-25">
+      <div class="text-center small">
+        © 2025 ME Decora Casa Decoracoes LTDA - Rua Othao, 405, Vila Leopoldina, São Paulo - SP. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
